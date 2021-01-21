@@ -96,16 +96,23 @@ console.log("Done")
     Using that array, iterate over it, requesting data for each user, creating a new card for each
     user, and adding that card to the DOM.
 */
+const arr = ['tetondan','dustinmyers','justsml','luishrd','bigknell'];
 
-const followersArray = [];
+arr.forEach(person => {
+console.log('file: index.js ~ line 102 ~ person', person);
+     
+axios.get(`https://api.github.com/users/${person}`)
+.then(returnedData => { //then give the returned data a name so we can do things with it. 
+     
+document.querySelector('.cards').append(cardMaker(returnedData.data));
 
+})
+.catch(error =>{
+console.log('file: index.js ~ error', error);
+})
 
+.finally(()=>{
+console.log("Done")     
+});
+});
 
-/*
-  List of LS Instructors Github username's:
-    tetondan
-    dustinmyers
-    justsml
-    luishrd
-    bigknell
-*/
