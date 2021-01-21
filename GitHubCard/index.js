@@ -9,7 +9,11 @@ import axios from 'axios'; // you have to import it to use it
 
 axios.get('https://api.github.com/users/imcatherinenoel')
 .then(returnedData => { //then give the returned data a name so we can do things with it. 
-console.log("🚀 ~ file: index.js ~ line 12 ~ returnedData", returnedData)	//console log so you can see it
+console.log('file: index.js ~ line 12 ~ returnedData', returnedData);
+	//console log so you can see it
+})
+.catch(error =>{
+console.log('file: index.js ~ line 16 ~ error', error);
 });
 
 /*
@@ -57,6 +61,12 @@ const followersArray = [];
 	 </div>
     </div>
 */
+
+
+
+
+
+
 
 /*
   List of LS Instructors Github username's:
